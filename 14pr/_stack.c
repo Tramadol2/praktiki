@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "student.h"
 #include <stdlib.h>
+#include <string.h>
 
 
 
@@ -41,39 +42,59 @@ struct Stack* init(struct Stack* result) {
     return result;
 }
 
-void load_students_from_file(struct Stack *stack, const char* ) {
-
-    FILE* fp = fopen("students.txt", "r");
-
-
-
-
-    while(!feof(fp)){
-        struct Student* _student = (struct Student*)initstudent("a", "a", "m", 0, 0, 0, 0, 0);
-
-        fscanf(fp, "%s %s %s %d %d %f %f %f", _student->surname, _student->name, _student->pol
-                , &_student->age, &_student->group, &_student->mathMark
-                , &_student->physicsMark, &_student->chemistryMark);
-
-       stack->push(stack,_student);
+void load_students_from_file(struct Stack *stack, const char* filename) {
+    FILE* fp = fopen(filename, "rb");
+    if (fp == NULL) {
+        perror("Error opening file for reading");
+        exit(EXIT_FAILURE);
     }
-
-
+    struct Student student;
+    while (fread(&student, sizeof(struct Student), 1, fp) == 1) {
+        stack->push(stack, &student);
+    }
     fclose(fp);
 }
 
 
-void saveStudentsToFile(struct Stack *Stack, const char *) {
-    FILE *file = fopen("students.txt", "w");
-
-    while (Stack->size > 0) {
-        struct Student *student =(struct Student*)Stack->pop(Stack);
-        fprintf(file, "%s %s %s %d %d %f %f %f", student->surname, student->name, student->pol
-                , student->age, student->group, student->mathMark
-                , student->physicsMark, student->chemistryMark);
-
-
+void saveStudentsToFile(struct Stack *stack, const char *filename) {
+    FILE *file = fopen(filename, "wb");
+    if (file == NULL) {
+        perror("Error opening file for writing");
+        exit(EXIT_FAILURE);
     }
 
-    fclose(file);
+    while(!feof(file)) {
+        int surnameSize;
+        int nameSize;
+        int sexSize;
+
+        struct Student* _student = stack->pop(stack);
+        fread(&surnameSize, sizeof(int), 1, file);
+        _student->surname = calloc(surnameSize, sizeof(char));
+        fread(_student->surname, sizeof(char), surnameSize, file);
+
+        fread(&nameSize, sizeof(int), 1, file);
+        _student->name = calloc(nameSize, sizeof(char));
+        fread(_student->name, sizeof(char), nameSize, file);
+
+        fread(&sexSize, sizeof(int), 1, file);
+        _student->pol  = calloc(sexSize, sizeof(char));
+        fread(_student->pol, sizeof(char), sexSize, file);
+
+        fread(&_student->age, sizeof(int), 1, file);
+        fread(&_student->group, sizeof(int), 1, file);
+        fread(&_student->mathMark, sizeof(float), 1, file);
+        fread(&_student->physicsMark, sizeof(float), 1, file);
+        fread(&_student->chemistryMark, sizeof(float), 1, file);
+
+        if(strlen(_student->surname) != 0){
+            _student->infoOutput(_student);
+
+            stack->push(stack,_student);
+        }
+
+        free(_student->surname);
+        free(_student->name);
+        free(_student->pol);
+    }
 }
