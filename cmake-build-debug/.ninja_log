@@ -1,0 +1,5 @@
+# ninja log v5
+0	296	7374143544341142	CMakeFiles/untitled.dir/main.c.obj	bb6ac922d5319884
+4	297	7374143544351135	CMakeFiles/untitled.dir/_stack.c.obj	e815b84f7ede34ea
+2	310	7374143544484116	CMakeFiles/untitled.dir/student.c.obj	203769ac338a2666
+310	646	7374143547814734	untitled.exe	39f94df287400f3e

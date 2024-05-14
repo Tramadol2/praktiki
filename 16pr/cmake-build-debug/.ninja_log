@@ -1,0 +1,23 @@
+# ninja log v5
+2	93	7351781967423748	CMakeFiles/untitled.dir/main.c.obj	52ec321c00443ecb
+93	196	7351781968411563	untitled.exe	39f94df287400f3e
+12	146	7351774968146616	CMakeFiles/untitled.dir/student.c.obj	167ad239ed1937ae
+1	466	7356828682493190	build.ninja	3cfbfab269a71fbe
+6	102	7351781774490126	CMakeFiles/untitled.dir/_stack.c.obj	341b0689681585d0
+62	1413	7356854720727143	CMakeFiles/untitled.dir/_stack.c.obj	4f3e841178a1e0cd
+3	1414	7356854720727143	CMakeFiles/untitled.dir/main.c.obj	5b36673fccc17bc0
+59	1415	7356854720727143	CMakeFiles/untitled.dir/student.c.obj	13dafda14037602d
+1415	2152	7356854728104239	untitled.exe	39f94df287400f3e
+2	962	7362933892789717	CMakeFiles/untitled.dir/_stack.c.obj	4f3e841178a1e0cd
+962	2054	7362933903663957	untitled.exe	39f94df287400f3e
+2	98	7362934245640250	CMakeFiles/untitled.dir/_stack.c.obj	4f3e841178a1e0cd
+98	197	7362934246586963	untitled.exe	39f94df287400f3e
+2	977	7370501044282193	CMakeFiles/untitled.dir/_stack.c.obj	4f3e841178a1e0cd
+977	2062	7370501055090513	untitled.exe	39f94df287400f3e
+3	653	7371804265585364	CMakeFiles/untitled.dir/main.c.obj	5b36673fccc17bc0
+653	1217	7371804271192559	untitled.exe	39f94df287400f3e
+2	648	7373995355824733	CMakeFiles/untitled.dir/main.c.obj	5b36673fccc17bc0
+32	648	7373995355824733	CMakeFiles/untitled.dir/_stack.c.obj	4f3e841178a1e0cd
+648	1108	7373995360405689	untitled.exe	39f94df287400f3e
+2	90	7373996442484052	CMakeFiles/untitled.dir/_stack.c.obj	4f3e841178a1e0cd
+91	177	7373996443316511	untitled.exe	39f94df287400f3e

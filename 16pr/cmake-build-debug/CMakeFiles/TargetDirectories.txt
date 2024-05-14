@@ -1,0 +1,3 @@
+D:/praktij/c/praktiki/14pr/cmake-build-debug/CMakeFiles/untitled.dir
+D:/praktij/c/praktiki/14pr/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/praktij/c/praktiki/14pr/cmake-build-debug/CMakeFiles/rebuild_cache.dir
